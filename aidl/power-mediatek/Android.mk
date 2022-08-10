@@ -18,4 +18,8 @@ LOCAL_SHARED_LIBRARIES := \
     libbinder_ndk \
     android.hardware.power-V2-ndk
 
+ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
+    LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
+endif
+
 include $(BUILD_SHARED_LIBRARY)
