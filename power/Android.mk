@@ -14,7 +14,6 @@ LOCAL_SRC_FILES := Power.cpp
 LOCAL_SHARED_LIBRARIES := \
     libbase \
     libbinder_ndk \
-    libpowerhal \
     android.hardware.power-V$(TARGET_POWERHAL_AIDL_VERSION)-ndk_platform
 
 LOCAL_CFLAGS += -DPOWERHAL_AIDL_VERSION=$(TARGET_POWERHAL_AIDL_VERSION)
