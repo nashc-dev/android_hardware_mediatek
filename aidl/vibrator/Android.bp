@@ -1,0 +1,39 @@
+//
+// Copyright (C) 2019 The Android Open Source Project
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_static {
+    name: "android.hardware.vibrator-service-impl.mediatek",
+    vendor_available: true,
+    host_supported: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk",
+    ],
+    export_include_dirs: ["include"],
+    srcs: [
+        "Vibrator.cpp",
+        "VibratorUtils.cpp",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.vibrator-service.mediatek",
+    relative_install_path: "hw",
+    init_rc: ["vibrator-mediatek.rc"],
+    vintf_fragments: ["android.hardware.vibrator.mediatek.xml"],
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "android.hardware.vibrator-V2-ndk",
+    ],
+    static_libs: [
+        "android.hardware.vibrator-service-impl.mediatek",
+    ],
+    srcs: ["main.cpp"],
+}
