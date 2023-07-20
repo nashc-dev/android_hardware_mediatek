@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-#ifndef ANDROID_HARDWARE_THERMAL_V2_0_THERMAL_H
-#define ANDROID_HARDWARE_THERMAL_V2_0_THERMAL_H
+#pragma once
 
 #include <android/hardware/thermal/2.0/IThermal.h>
 #include <hidl/MQDescriptor.h>
@@ -97,5 +96,3 @@ extern "C" IThermal* HIDL_FETCH_IThermal(const char* name);
 }  // namespace thermal
 }  // namespace hardware
 }  // namespace android
-
-#endif  // ANDROID_HARDWARE_THERMAL_V2_0_THERMAL_H

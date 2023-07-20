@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-#ifndef THERMAL_MAP_TABLE_TYPE_H
-#define THERMAL_MAP_TABLE_TYPE_H
+#pragma once
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -154,5 +153,3 @@ enum tz_version {
 }  // namespace thermal
 }  // namespace hardware
 }  // namespace android
-
-#endif  // THERMAL_MAP_TABLE_TYPE_H
