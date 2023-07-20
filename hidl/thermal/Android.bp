@@ -14,7 +14,7 @@
 // limitations under the License.
 
 cc_library_shared {
-    name: "android.hardware.thermal@2.0-impl",
+    name: "android.hardware.thermal@2.0-impl-mtk",
     defaults: ["hidl_defaults"],
     vendor: true,
     relative_install_path: "hw",
@@ -43,6 +43,9 @@ cc_binary {
     vendor: true,
     init_rc: ["android.hardware.thermal@2.0-service.mtk.rc"],
     vintf_fragments: ["android.hardware.thermal@2.0-service.mtk.xml"],
+    required: [
+        "android.hardware.thermal@2.0-impl-mtk",
+    ],
     srcs: [
         "service.cpp"
     ],
